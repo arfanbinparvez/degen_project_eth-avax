@@ -1,15 +1,15 @@
 # degen_project_eth-avax
 
-This Solidity program is a simple program that demonstrates creation of ERC20 token "Degen" and deploy it on the Avalanche network "Snowtrace Testnet".
+This Solidity program is a simple program that demonstrates the creation of the ERC20 token "Degen". We can track the deployed contract's transactions using our contract address on the "Snowtrace Testnet" tool.
 ## Description
 
-This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. Here, I have named my token as "Degen" and taken its symbol as "DGN". You can use any name and symbol of your own choice.
+This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. Here, I have named my token "Degen" and taken its symbol as "DGN". You can use any name and symbol of your own choice.
 
 ## Getting Started
 
 ### Executing program
 
-To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
+You can use Remix, an online Solidity IDE to run this program. To get started, go to the Remix website at https://remix.ethereum.org/.
 
 Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., HelloWorld.sol). Copy and paste the following code into the file:
 
@@ -67,7 +67,7 @@ contract DegenToken is ERC20, Ownable {
 
 ```
 
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile ERC20.sol" button.
+To compile the code, click the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile ERC20.sol" button.
 
 Once the code is compiled, you can deploy the contract by connecting your Metmask with Remix IDE by selecting "Injected Provider Metamask" in the environment field of the DEPLOY section.
 
