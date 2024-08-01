@@ -8,7 +8,11 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 contract DegenToken is ERC20, Ownable, ERC20Burnable {
     uint256 public constant REDEMPTION_RATE = 100;
 
-    mapping(address => uint256) public itemsOwned;
+    struct ItemOwnership {           //items owned are mapped to the id or name of the item 
+        uint256 quantity;
+    }
+
+    mapping(address => mapping(uint256 => ItemOwnership)) public itemsOwned;
 
     struct GameItem {
         string name;
@@ -30,12 +34,12 @@ contract DegenToken is ERC20, Ownable, ERC20Burnable {
         uint256 cost = item.cost * quantity;
         require(balanceOf(msg.sender) >= cost, "Not enough tokens to redeem for an item");
 
-        itemsOwned[msg.sender] += quantity;
+        itemsOwned[msg.sender][itemId].quantity += quantity;
         _burn(msg.sender, cost);
     }
 
-    function checkTokensOwned(address user) public view returns (uint256) {
-        return itemsOwned[user];
+    function checkTokensOwned(address user, uint256 itemId) public view returns (uint256) {
+        return itemsOwned[user][itemId].quantity;
     }
 
     function mintTokens(address to, uint256 amount) public onlyOwner {
